@@ -30,16 +30,16 @@ class Fan < ActiveRecord::Base
       self.followers.count 
     end 
   # 4. Where is this fan from? 
-  def location 
-    self.location
-  end
-  # 5. What is the name of this fan? 
-    def name 
-      self.name 
-    end
+  # def location 
+  #   self.location
+  # end
+  # # # 5. What is the name of this fan? 
+  #   def name 
+  #     self.name 
+  #   end
   # 6. What is the age of this fan?
-    def age 
-      self.age
-    end
+    # def age 
+    #   self.age
+    # end
 
   end 
