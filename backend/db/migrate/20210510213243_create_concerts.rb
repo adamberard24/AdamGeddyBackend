@@ -1,8 +1,8 @@
 class CreateConcerts < ActiveRecord::Migration[5.2]
   def change
     create_table :concerts do |t|
-      t.time :time
-      t.date :date
+    
+      t.string :day
       t.string :venue
       t.integer :cost
       t.integer :artist_id

@@ -14,8 +14,6 @@ ActiveRecord::Schema.define(version: 2021_05_10_213404) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.string "songs"
-    t.integer "followers"
   end
 
   create_table "attending_concerts", force: :cascade do |t|
@@ -24,8 +22,7 @@ ActiveRecord::Schema.define(version: 2021_05_10_213404) do
   end
 
   create_table "concerts", force: :cascade do |t|
-    t.time "time"
-    t.date "date"
+    t.string "day"
     t.string "venue"
     t.integer "cost"
     t.integer "artist_id"
