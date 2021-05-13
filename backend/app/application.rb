@@ -4,18 +4,16 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     
-    if req.path.match(/test/) 
-      return [200, { 'Content-Type' => 'application/json' }, [ {:message => "test response!"}.to_json ]]
 
-    # elsif req.path == "/followers" && req.get?
-    #  return[200, { 'Content-Type' => 'application/json' }, [ Follower.all.to_json]]
-    # elsif req.path.match("/artists/*") && req.get?
+    # # elsif req.path == "/followers" && req.get?
+    # #  return[200, { 'Content-Type' => 'application/json' }, [ Follower.all.to_json]]
+    # # elsif req.path.match("/artists/*") && req.get?
     
-    elsif req.path =="/artists" && req.post?
-      artist_hash=req.body.read
-      # new_friend = Artist.create(artist_hash)
-      binding.pry
-      # return[201, {'Content-Type' => 'application/json'}, [new_friend.to_json]]
+    if req.path =="/artists" && req.post?
+      artist_hash=JSON.parse(req.body.read)
+      new_friend = Artist.create(artist_hash)
+      
+      return[201, {'Content-Type' => 'application/json'}, [new_friend.to_json]]
 
     elsif req.path=="/artists" && req.get?
       return[201, {'Content-Type' => 'application/json'}, [Artist.all.to_json]]
