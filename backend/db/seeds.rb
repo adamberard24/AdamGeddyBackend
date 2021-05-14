@@ -12,19 +12,24 @@ Follower.destroy_all
 all_artists = [
 {
     name: "Geddy Lux",
+    likes: 0
 },
 {
 
     name: "Jayified",
+    likes: 0
 },
 {
     name: "Adam Schmoney",
+    likes: 0
 },
 {
     name: "Finessed",
+    likes: 0
 },
 {
     name: "Lil Baby",
+    likes: 0
 }
 ]
 

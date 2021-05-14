@@ -22,6 +22,14 @@ class Application
       concert_arr = new_pal.concerts
       return[201, {'Content-Type' => 'application/json'}, [concert_arr.to_json]]
 
+
+
+    elsif req.path.match(/artists/) && req.delete?
+      id = req.path.split("/artists/").last
+      artist = Artist.find(id)
+      artist.destroy
+      return[200, { 'Content-Type' => 'application/json'}, [artist.to_json]]
+
     elsif req.path=="/artists" && req.get?
       return[201, {'Content-Type' => 'application/json'}, [Artist.all.to_json]]
     

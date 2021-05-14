@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2021_05_10_213404) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
+    t.integer "likes"
   end
 
   create_table "attending_concerts", force: :cascade do |t|
